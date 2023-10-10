@@ -42,10 +42,10 @@ export default {
   },
 
   methods:{
-      getImgSrc(img){
-        return new URL(`../assets/img/${img}`, import.meta.url).href;
-      }
+    getImgSrc(img){
+      return new URL(`../assets/img/${img}`, import.meta.url).href;
     }
+  }
 }
 </script>
 

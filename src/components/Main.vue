@@ -1,6 +1,88 @@
 <script>
 export default {
-  name: 'Main'
+  name: 'Main',
+  data(){
+    return{
+      users: [
+        {
+          imgSrc: '1.webp',
+          imgHideSrc: '1b.webp',
+          iconHeart: 'fa-solid fa-heart',
+          discount: '-50%',
+          sustainability: 'sostenibilità',
+          brand: 'levi\'s',
+          nameProduct: 'relaxed fit tee unisex',
+          priceDiscounted: '14,99 €',
+          priceFull: '29,99 €'
+        },
+
+        {
+          imgSrc: '2.webp',
+          imgHideSrc: '2b.webp',
+          iconHeart: 'fa-solid fa-heart',
+          discount: '-30%',
+          sustainability: '',
+          brand: 'guess',
+          nameProduct: 'roses tee',
+          priceDiscounted: '20,99 €',
+          priceFull: '29,99 €'
+        },
+
+        {
+          imgSrc: '3.webp',
+          imgHideSrc: '3b.webp',
+          iconHeart: 'fa-solid fa-heart',
+          discount: '-30%',
+          sustainability: '',
+          brand: 'come zucchero filato',
+          nameProduct: 'voglia di colori pastello',
+          priceDiscounted: '129,99 €',
+          priceFull: '184,99 €'
+        },
+
+        {
+          imgSrc: '4.webp',
+          imgHideSrc: '4b.webp',
+          iconHeart: 'fa-solid fa-heart',
+          discount: '-50%',
+          sustainability: 'sostenibilità',
+          brand: 'levi\'s',
+          nameProduct: 'tee unisex',
+          priceDiscounted: '14,99 €',
+          priceFull: '29,99 €'
+        },
+
+        {
+          imgSrc: '5.webp',
+          imgHideSrc: '5b.webp',
+          iconHeart: 'fa-solid fa-heart',
+          discount: '',
+          sustainability: '',
+          brand: 'maya deluxe',
+          nameProduct: 'stripe bodice',
+          priceDiscounted: '99,99 €',
+          priceFull: ''
+        },
+
+        {
+          imgSrc: '6.webp',
+          imgHideSrc: '6b.webp',
+          iconHeart: 'fa-solid fa-heart',
+          discount: '',
+          sustainability: 'sostenibilità',
+          brand: 'esprit',
+          nameProduct: 'maglione - black',
+          priceDiscounted: '',
+          priceFull: '29,99 €'
+        }
+      ]
+    }
+  },
+  methods:{
+    getImgSrc(img){
+      return new URL(`../assets/img/${img}`, import.meta.url).href;
+    }
+  }
 }
 </script>
 
@@ -9,185 +91,33 @@ export default {
     <div class="container">
       <div class="row">
         <!-- card  -->
-        <div class="col">
+        <div class="col" v-for="(user, index) in users" :key="index">
           <div class="card">
             <div class="card-image">
               <div>
-                <img src="../assets/img/1.webp" alt="nome prodotto...">
+                <img :src="getImgSrc(user.imgSrc)" alt="nome prodotto...">
 
-                <img class="hide" src="../assets/img/1b.webp" alt="nome prodotto...">
+                <img class="hide" :src="getImgSrc(user.imgHideSrc)" alt="nome prodotto...">
               </div>
 
-              <div class="heart"><i class="fa-solid fa-heart"></i></div>
+              <div class="heart"><i :class="user.iconHeart"></i></div>
 
               <div class="card-badge">
-                <span class="discount">-50%</span>
+                <span class="discount" v-if="user.discount.length > 0">{{ user.discount }}</span>
 
-                <span class="sustainability">sostenibilità</span>
+                <span class="sustainability" v-if="user.sustainability.length > 0">{{ user.sustainability }}</span>
               </div>
             </div>
 
             <div class="card-text">
-              <span>levi's</span>
+              <span>{{ user.brand }}</span>
 
-              <h3>relaxed fit tee unisex</h3>
-
-              <div class="price">
-                <span>14,99 €</span>
-
-                <del>29,99 €</del>
-              </div>
-            </div>
-          </div> 
-        </div>
-        <!-- /card  -->
-
-        <!-- card  -->
-        <div class="col">
-          <div class="card">
-            <div class="card-image">
-              <div>
-                <img src="../assets/img/2.webp" alt="nome prodotto...">
-
-                <img class="hide" src="../assets/img/2b.webp" alt="nome prodotto...">
-              </div>
-
-              <div class="heart"><i class="fa-solid fa-heart"></i></div>
-
-              <div class="card-badge">
-                <span class="discount">-30%</span>
-              </div>
-            </div>
-
-            <div class="card-text">
-              <span>guess</span>
-              <h3>roses tee</h3>
+              <h3>{{ user.nameProduct }}</h3>
 
               <div class="price">
-                <span>20,99 €</span>
+                <span v-if="user.priceDiscounted.length > 0">{{ user.priceDiscounted }}</span>
 
-                <del>29,99 €</del>
-              </div>
-            </div>
-          </div> 
-        </div>
-        <!-- /card  -->
-
-        <!-- card  -->
-        <div class="col">
-          <div class="card">
-            <div class="card-image">
-              <div>
-                <img src="../assets/img/3.webp" alt="nome prodotto...">
-
-                <img class="hide" src="../assets/img/3b.webp" alt="nome prodotto...">
-              </div>
-
-              <div class="heart"><i class="fa-solid fa-heart"></i></div>
-
-              <div class="card-badge">
-                <span class="discount">-30%</span>
-              </div>
-            </div>
-
-            <div class="card-text">
-              <span>come zucchero filato</span>
-
-              <h3>voglia di colori pastello</h3>
-
-              <div class="price">
-                <span>129,99 €</span>
-
-                <del>184,99 €</del>
-              </div>
-            </div>
-          </div> 
-        </div>
-        <!-- /card  -->
-
-        <!-- card  -->
-        <div class="col">
-          <div class="card">
-            <div class="card-image">
-              <div>
-                <img src="../assets/img/4.webp" alt="nome prodotto...">
-
-                <img class="hide" src="../assets/img/4b.webp" alt="nome prodotto...">
-              </div>
-
-              <div class="heart"><i class="fa-solid fa-heart"></i></div>
-
-              <div class="card-badge">
-                <span class="discount">-50%</span>
-
-                <span class="sustainability">sostenibilità</span>
-              </div>
-            </div>
-
-            <div class="card-text">
-              <span>levi's</span>
-
-              <h3>tee unisex</h3>
-
-              <div class="price">
-                <span>14,99 €</span>
-
-                <del>29,99 €</del>
-              </div>
-            </div>
-          </div> 
-        </div>
-        <!-- /card  -->
-
-        <!-- card  -->
-        <div class="col">
-          <div class="card">
-            <div class="card-image">
-              <div>
-                <img src="../assets/img/5.webp" alt="nome prodotto...">
-                
-                <img class="hide" src="../assets/img/5b.webp" alt="nome prodotto...">
-              </div>
-
-              <div class="heart"><i class="fa-solid fa-heart"></i></div>
-            </div>
-
-            <div class="card-text">
-              <span>maya deluxe</span>
-
-              <h3>stripe bodice</h3>
-
-              <div class="price">
-                <span>99,99 €</span>
-              </div>
-            </div>
-          </div> 
-        </div>
-        <!-- /card  -->
-
-        <!-- card  -->
-        <div class="col">
-          <div class="card">
-            <div class="card-image">
-              <div>
-                <img src="../assets/img/6.webp" alt="nome prodotto...">
-                <img class="hide" src="../assets/img/6b.webp" alt="nome prodotto...">
-              </div>
-
-              <div class="heart"><i class="fa-solid fa-heart"></i></div>
-
-              <div class="card-badge">
-                <span class="sustainability">sostenibilità</span>
-              </div>
-            </div>
-
-            <div class="card-text">
-              <span>esprit</span>
-
-              <h3>maglione - black</h3>
-
-              <div class="price">
-                <span>29,99 €</span>
+                <del v-if="user.priceFull.length > 0">{{ user.priceFull }}</del>
               </div>
             </div>
           </div> 
@@ -288,11 +218,8 @@ export default {
 
           .price{
             span{
+              margin-right: 10px;
               color: $bg-discount;
-            }
-
-            del{
-              margin-left: 10px;
             }
           }
         }
