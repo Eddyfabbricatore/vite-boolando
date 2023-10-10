@@ -10,6 +10,12 @@ body{
   font-family: $font;
 }
 
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .container{
   width: $width-container;
   margin: 0 auto;
