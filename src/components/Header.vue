@@ -9,9 +9,17 @@ export default {
     <div class="container">
       <nav>
         <ul>
-          <li><a href="#">uomo</a></li>
-          <li><a href="#">donna</a></li>
-          <li><a href="#">bambini</a></li>
+          <li>
+            <a href="#">uomo</a>
+          </li>
+
+          <li>
+            <a href="#">donna</a>
+          </li>
+
+          <li>
+            <a href="#">bambini</a>
+          </li>
         </ul>
       </nav>
 
@@ -21,9 +29,17 @@ export default {
 
       <nav>
         <ul>
-          <li><a href="#"><i class="fa-regular fa-user"></i></a></li>
-          <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
-          <li><a href="#"><i class="fa-solid fa-bag-shopping"></i></a></li>
+          <li>
+            <a href="#"><i class="fa-regular fa-user"></i></a>
+          </li>
+
+          <li>
+            <a href="#"><i class="fa-regular fa-heart"></i></a>
+          </li>
+
+          <li>
+            <a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -34,22 +50,19 @@ export default {
   @use '../scss/partials/variables' as *;
 
   header{
-    height: $ht-header;
+    height: $h-header;
     background-color: $bg-header;
 
     .container{
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 100%;
+      height: $h-100;
 
       li{
-        display: inline-block;
         margin: 0 10px;
-        text-transform: capitalize;
 
         a{
-          text-decoration: none;
 
           &:hover{
             text-decoration: underline;
@@ -63,7 +76,7 @@ export default {
       }
 
       .logo{
-        width: 100px;
+        width: $w-logo;
       }
     }
   }

@@ -17,7 +17,20 @@ img{
   object-fit: cover;
 }
 
+ul{
+  list-style: none;
+}
+
+li{
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+a{
+  text-decoration: none;
+}
+
 .container{
-  width: $width-container;
+  width: $w-container;
   margin: 0 auto;
 }

@@ -208,10 +208,10 @@ export default {
   .row{
     display: flex;
     flex-wrap: wrap;
-    width: 100%; 
+    width: $h-100;
 
     .col{
-      width: calc(100% / 3);
+      width: $w-col;
 
       .card{
         margin-bottom: 40px;
@@ -260,11 +260,11 @@ export default {
             left: 0;
 
             .discount{
+              margin-right: 10px;
               background-color: $bg-discount;
             }
 
             .sustainability{
-              margin-left: 10px;
               text-transform: capitalize;
               background-color: $bg-sustainability;
             }
