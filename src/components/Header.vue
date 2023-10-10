@@ -1,6 +1,51 @@
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  data(){
+    return{
+      categoryMenu: [
+        {
+          href: '#',
+          text: 'uomo'
+        },
+
+        {
+          href: '#',
+          text: 'donna'
+        },
+
+        {
+          href: '#',
+          text: 'bambini'
+        }
+      ],
+
+      imgSrc: 'boolean-logo.png',
+
+      iconMenu: [
+        {
+          href: '#',
+          text: 'fa-regular fa-user'
+        },
+
+        {
+          href: '#',
+          text: 'fa-regular fa-heart'
+        },
+
+        {
+          href: '#',
+          text: 'fa-solid fa-bag-shopping'
+        }
+      ]
+    }
+  },
+
+  methods:{
+      getImgSrc(img){
+        return new URL(`../assets/img/${img}`, import.meta.url).href;
+      }
+    }
 }
 </script>
 
@@ -9,36 +54,20 @@ export default {
     <div class="container">
       <nav>
         <ul>
-          <li>
-            <a href="#">uomo</a>
-          </li>
-
-          <li>
-            <a href="#">donna</a>
-          </li>
-
-          <li>
-            <a href="#">bambini</a>
+          <li v-for="(item, index) in categoryMenu" :key="index">
+            <a :href="item.href">{{ item.text }}</a>
           </li>
         </ul>
       </nav>
 
       <div class="logo">
-        <img src="../assets/img/boolean-logo.png" alt="Logo">
+        <img :src="getImgSrc(imgSrc)" alt="Logo">
       </div>
 
       <nav>
         <ul>
-          <li>
-            <a href="#"><i class="fa-regular fa-user"></i></a>
-          </li>
-
-          <li>
-            <a href="#"><i class="fa-regular fa-heart"></i></a>
-          </li>
-
-          <li>
-            <a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+          <li v-for="(item, index) in iconMenu" :key="index">
+            <a :href="item.href"><i :class="item.text"></i></a>
           </li>
         </ul>
       </nav>
