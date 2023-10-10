@@ -1,0 +1,16 @@
+@use './variables' as *;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: $font;
+}
+
+.container{
+  width: $width-container;
+  margin: 0 auto;
+}

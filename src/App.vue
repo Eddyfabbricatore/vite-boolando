@@ -3,11 +3,12 @@ export default {
   name: 'App'
 }
 </script>
-  <h1>Vite-boolando</h1>
+
 <template>
+  <h1>Vite Boolando</h1>
   
 </template>
 
-<style>
-
+<style lang="scss">
+  @use './scss/main.scss';
 </style>
