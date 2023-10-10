@@ -1,43 +1,16 @@
 <script>
+import headerCategorysMenu from '../data/headerCategorysMenu';
+import headerIconsMenu from '../data/headerIconsMenu';
+
 export default {
   name: 'Header',
   data(){
     return{
-      categoryMenu: [
-        {
-          href: '#',
-          text: 'uomo'
-        },
-
-        {
-          href: '#',
-          text: 'donna'
-        },
-
-        {
-          href: '#',
-          text: 'bambini'
-        }
-      ],
+      headerCategorysMenu,
 
       imgSrc: 'boolean-logo.png',
 
-      iconMenu: [
-        {
-          href: '#',
-          text: 'fa-regular fa-user'
-        },
-
-        {
-          href: '#',
-          text: 'fa-regular fa-heart'
-        },
-
-        {
-          href: '#',
-          text: 'fa-solid fa-bag-shopping'
-        }
-      ]
+      headerIconsMenu
     }
   },
 
@@ -54,7 +27,7 @@ export default {
     <div class="container">
       <nav>
         <ul>
-          <li v-for="(item, index) in categoryMenu" :key="index">
+          <li v-for="(item, index) in headerCategorysMenu" :key="index">
             <a :href="item.href">{{ item.text }}</a>
           </li>
         </ul>
@@ -66,7 +39,7 @@ export default {
 
       <nav>
         <ul>
-          <li v-for="(item, index) in iconMenu" :key="index">
+          <li v-for="(item, index) in headerIconsMenu" :key="index">
             <a :href="item.href"><i :class="item.text"></i></a>
           </li>
         </ul>

@@ -1,55 +1,18 @@
 <script>
+import footerInfos from '../data/footerInfos';
+import footerLinks from '../data/footerLinks';
+
 export default {
   name: 'Footer',
   data(){
     return{
       infoTitle: 'boolando s.r.l',
 
-      infos: [
-        {
-          href: '#',
-          text: 'informazioni legali'
-        },
-
-        {
-          href: '#',
-          text: 'informazioni sulla privacy'
-        },
-
-        {
-          href: '#',
-          text: 'diritto di recesso'
-        }
-      ],
+      footerInfos,
 
       linkTitle: 'Trovaci anche su',
 
-      links: [
-        {
-          href: '#',
-          icon: 'fa-brands fa-square-twitter'
-        },
-
-        {
-          href: '#',
-          icon: 'fa-brands fa-square-facebook'
-        },
-
-        {
-          href: '#',
-          icon: 'fa-brands fa-square-instagram'
-        },
-
-        {
-          href: '#',
-          icon: 'fa-brands fa-square-pinterest'
-        },
-
-        {
-          href: '#',
-          icon: 'fa-brands fa-square-youtube'
-        }
-      ]
+      footerLinks
     }
   }
 }
@@ -63,7 +26,7 @@ export default {
 
         <nav>
           <ul>
-            <li v-for="(info, index) in infos" :key="index">
+            <li v-for="(info, index) in footerInfos" :key="index">
               <a href="info.href">{{ info.text }}</a>
             </li>
           </ul>
@@ -75,7 +38,7 @@ export default {
 
         <nav>
           <ul>
-            <li v-for="(link, index) in links" :key="index">
+            <li v-for="(link, index) in footerLinks" :key="index">
               <a href="link.href"><i :class="link.icon"></i></a>
             </li>
           </ul>
