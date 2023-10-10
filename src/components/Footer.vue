@@ -1,6 +1,57 @@
 <script>
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  data(){
+    return{
+      infoTitle: 'boolando s.r.l',
+
+      infos: [
+        {
+          href: '#',
+          text: 'informazioni legali'
+        },
+
+        {
+          href: '#',
+          text: 'informazioni sulla privacy'
+        },
+
+        {
+          href: '#',
+          text: 'diritto di recesso'
+        }
+      ],
+
+      linkTitle: 'Trovaci anche su',
+
+      links: [
+        {
+          href: '#',
+          icon: 'fa-brands fa-square-twitter'
+        },
+
+        {
+          href: '#',
+          icon: 'fa-brands fa-square-facebook'
+        },
+
+        {
+          href: '#',
+          icon: 'fa-brands fa-square-instagram'
+        },
+
+        {
+          href: '#',
+          icon: 'fa-brands fa-square-pinterest'
+        },
+
+        {
+          href: '#',
+          icon: 'fa-brands fa-square-youtube'
+        }
+      ]
+    }
+  }
 }
 </script>
 
@@ -8,48 +59,24 @@ export default {
   <footer>
     <div class="container">
       <div class="info">
-        <h3>boolando s.r.l</h3>
+        <h3>{{ infoTitle }}</h3>
 
         <nav>
           <ul>
-            <li>
-              <a href="#">informazioni legali</a>
-            </li>
-
-            <li>
-              <a href="#">informazioni sulla privacy</a>
-            </li>
-
-            <li>
-              <a href="#">diritto di recesso</a>
+            <li v-for="(info, index) in infos" :key="index">
+              <a href="info.href">{{ info.text }}</a>
             </li>
           </ul>
         </nav>
       </div>
 
       <div class="link">
-        <h3>Trovaci anche su</h3>
+        <h3>{{ linkTitle }}</h3>
 
         <nav>
           <ul>
-            <li>
-              <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
-            </li>
-
-            <li>
-              <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-            </li>
-
-            <li>
-              <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-            </li>
-
-            <li>
-              <a href="#"><i class="fa-brands fa-square-pinterest"></i></a>
-            </li>
-
-            <li>
-              <a href="#"><i class="fa-brands fa-square-youtube"></i></a>
+            <li v-for="(link, index) in links" :key="index">
+              <a href="link.href"><i :class="link.icon"></i></a>
             </li>
           </ul>
         </nav>

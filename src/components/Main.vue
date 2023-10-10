@@ -72,8 +72,8 @@ export default {
           sustainability: 'sostenibilità',
           brand: 'esprit',
           nameProduct: 'maglione - black',
-          priceDiscounted: '',
-          priceFull: '29,99 €'
+          priceDiscounted: '29,99 €',
+          priceFull: ''
         }
       ]
     }
@@ -94,7 +94,7 @@ export default {
         <div class="col" v-for="(user, index) in users" :key="index">
           <div class="card">
             <div class="card-image">
-              <div>
+              <div class="image">
                 <img :src="getImgSrc(user.imgSrc)" alt="nome prodotto...">
 
                 <img class="hide" :src="getImgSrc(user.imgHideSrc)" alt="nome prodotto...">
@@ -150,17 +150,21 @@ export default {
         .card-image{
           position: relative;
 
-          .hide{
-            display: none;
-          }
+          .image{
+            height: $h-card-image;
 
-          &:hover{
-            img{
+            .hide{
               display: none;
             }
 
-            img.hide{
-              display: block;
+            &:hover{
+              img{
+                display: none;
+              }
+
+              img.hide{
+                display: block;
+              }
             }
           }
 
