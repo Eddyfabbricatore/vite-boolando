@@ -36,36 +36,35 @@ export default {
   header{
     height: $ht-header;
     background-color: $bg-header;
-  }
 
-  li{
-    display: inline-block;
-    margin: 0 10px;
-    text-transform: capitalize;
-  }
+    .container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
 
-  a{
-    text-decoration: none;
+      li{
+        display: inline-block;
+        margin: 0 10px;
+        text-transform: capitalize;
 
-    &:hover{
-      text-decoration: underline;
+        a{
+          text-decoration: none;
+
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+
+        a,
+        i{
+          color: $color-link;
+        }
+      }
+
+      .logo{
+        width: 100px;
+      }
     }
-  }
-
-  a,
-  i{
-    color: $color-link;
-  }
-
-  .container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: $width-container;
-    height: 100%;
-  }
-
-  .logo{
-    width: 100px;
   }
 </style>
