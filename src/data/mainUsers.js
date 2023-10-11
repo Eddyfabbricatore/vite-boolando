@@ -1,5 +1,6 @@
 export default [
   {
+    id: 101,
     imgSrc: '1.webp',
     imgHideSrc: '1b.webp',
     iconHeart: 'fa-solid fa-heart',
@@ -12,6 +13,7 @@ export default [
   },
 
   {
+    id: 102,
     imgSrc: '2.webp',
     imgHideSrc: '2b.webp',
     iconHeart: 'fa-solid fa-heart',
@@ -24,6 +26,7 @@ export default [
   },
 
   {
+    id: 103,
     imgSrc: '3.webp',
     imgHideSrc: '3b.webp',
     iconHeart: 'fa-solid fa-heart',
@@ -36,6 +39,7 @@ export default [
   },
 
   {
+    id: 104,
     imgSrc: '4.webp',
     imgHideSrc: '4b.webp',
     iconHeart: 'fa-solid fa-heart',
@@ -48,6 +52,7 @@ export default [
   },
 
   {
+    id: 105,
     imgSrc: '5.webp',
     imgHideSrc: '5b.webp',
     iconHeart: 'fa-solid fa-heart',
@@ -60,6 +65,7 @@ export default [
   },
 
   {
+    id: 106,
     imgSrc: '6.webp',
     imgHideSrc: '6b.webp',
     iconHeart: 'fa-solid fa-heart',
